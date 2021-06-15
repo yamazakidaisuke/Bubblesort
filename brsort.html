@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バブルソート・アルゴリズム：降順</title>
+</head>
+<body>
+    <script>
+        //配列
+        const a = [20,10,30,60,50,90,70,40]; //8
+        //bsort関数
+        function brsort(array){
+            //配列の長さを取得
+            let len = array.length; //8
+            //右側から決めるための大きいループ
+            for(let i=len; i>0; i--){
+                //比較していくためのfor文
+                for(let x=len; x>len-i; x--){
+                    if(array[x] > array[x-1]){
+                        [array[x],array[x-1]] = [array[x-1],array[x]];
+                    }
+                }
+            }
+            return array;
+        }
+        console.log(brsort(a));
+
+    </script>
+</body>
+</html>
